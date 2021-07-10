@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Validators } from "@angular/forms";
 import { FieldConfig } from "./field.interface";
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
+import { PermissionLevelEnum } from './components/constants/permissionLevelEnum';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +17,7 @@ export class AppComponent {
       label: "Username",
       inputType: "text",
       name: "name",
+      canCreate: false,
       validations: [
         {
           name: "required",
