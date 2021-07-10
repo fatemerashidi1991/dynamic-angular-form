@@ -14,6 +14,7 @@ import { RadiobuttonComponent } from './components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { ThousandSeparatorPipe } from './components/pipes/thousandSeparator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +29,20 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ThousandSeparatorPipe],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    DateComponent,
+    RadiobuttonComponent,
+    CheckboxComponent
+  ]
 })
 export class AppModule { }

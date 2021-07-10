@@ -5,7 +5,7 @@ import { FieldConfig } from "../../field.interface";
 selector: "app-select",
 template: `
 <mat-form-field class="demo-full-width margin-top" [formGroup]="group">
-<mat-select [placeholder]="field.label" [formControlName]="field.name">
+<mat-select [placeholder]="field.label!" [formControlName]="field.name">
 <mat-option *ngFor="let item of field.options" [value]="item">{{item}}</mat-option>
 </mat-select>
 </mat-form-field>
