@@ -17,7 +17,7 @@ export class AppComponent {
       label: "Username",
       inputType: "text",
       name: "name",
-      canCreate: false,
+      disable: false,
       validations: [
         {
           name: "required",
@@ -132,11 +132,16 @@ export class AppComponent {
       value: true
     },
     {
+      type: "input",
+      label: "color",
+      inputType: "color",
+      name: "color",
+    },
+    {
       name: "saveBtn",
       type: "button",
       label: "Save"
     },
-
   ];
   submit(value: any) { }
 }

@@ -15,6 +15,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { ThousandSeparatorPipe } from './components/pipes/thousandSeparator';
+import { TextAreaComponent } from './components/textarea/textarea.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { ThousandSeparatorPipe } from './components/pipes/thousandSeparator';
     DateComponent,
     RadiobuttonComponent,
     CheckboxComponent,
+    TextAreaComponent,
     DynamicFieldDirective,
     DynamicFormComponent
   ],
@@ -42,7 +44,8 @@ import { ThousandSeparatorPipe } from './components/pipes/thousandSeparator';
     SelectComponent,
     DateComponent,
     RadiobuttonComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    TextAreaComponent
   ]
 })
 export class AppModule { }

@@ -17,10 +17,7 @@ export interface FieldConfig {
     validations?: Validator[];
     mask?: string;
     hasThousandSeparator?: boolean;
-    canCreate?: boolean;
-    canEdit?: boolean;
-    canDelete?: boolean;
-    canRead?: boolean;
+    disable?: boolean;
     //  permissionLevel?: PermissionLevelEnum[]; 
 }
     //info: inputType:
