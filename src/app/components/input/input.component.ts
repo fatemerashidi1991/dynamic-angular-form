@@ -6,7 +6,7 @@ import { ThousandSeparatorPipe } from "../pipes/thousandSeparator";
 @Component({
   selector: "app-input",
   template: `
-  <mat-form-field class="demo-full-width" [formGroup]="group">
+  <mat-form-field class="demo-full-width" [formGroup]="group" >
   <input matInput [formControlName]="field!.name" [placeholder]="field.label!" [type]="field.inputType!"  mask="field.mask!" 
   (focusout)="processMyValue()" [(ngModel)]="field.value" [readonly]="field.disable">
   <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">

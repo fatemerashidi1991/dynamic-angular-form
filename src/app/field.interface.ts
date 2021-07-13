@@ -18,6 +18,7 @@ export interface FieldConfig {
     mask?: string;
     hasThousandSeparator?: boolean;
     disable?: boolean;
+    hiddenOnCreate?:boolean;
     //  permissionLevel?: PermissionLevelEnum[]; 
 }
     //info: inputType:
