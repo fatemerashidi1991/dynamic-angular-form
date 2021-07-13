@@ -138,6 +138,12 @@ export class AppComponent {
       name: "color",
     },
     {
+      type: "textarea",
+      label: "description",
+      inputType: "textarea",
+      name: "textarea",
+    },
+    {
       name: "saveBtn",
       type: "button",
       label: "Save"

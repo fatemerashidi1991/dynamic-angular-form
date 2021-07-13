@@ -18,14 +18,9 @@ import { ThousandSeparatorPipe } from "../pipes/thousandSeparator";
 export class TextAreaComponent implements OnInit {
   field: FieldConfig;
   group: FormGroup;
-  constructor(private thousandSeparator: ThousandSeparatorPipe) {
+  constructor() {
   }
-  processMyValue(): void {
-    let numberVal = parseInt(this.field.value).toLocaleString();
-    if (!isNaN(this.field.value) && this.field.hasThousandSeparator) {
-      this.field.value = numberVal;
-    }
-  }
+ 
   ngOnInit() {
   }
 }
