@@ -5,22 +5,15 @@ import { ThousandSeparatorPipe } from "../pipes/thousandSeparator";
 
 @Component({
   selector: "app-textarea",
-  template: `
-  <mat-form-field class="demo-full-width" [formGroup]="group">
-  <textarea matInput [formControlName]="field!.name" [placeholder]="field.label!"></textarea>
-  <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">
-  <mat-error *ngIf="group.get(field.name)!.hasError(validation.name)">{{validation.message}}</mat-error>
-  </ng-container>
-  </mat-form-field>
-  `,
-  styles: []
+  templateUrl: './textarea.html',
+  styleUrls: ['./textarea.css']
 })
 export class TextAreaComponent implements OnInit {
   field: FieldConfig;
   group: FormGroup;
   constructor() {
   }
- 
+
   ngOnInit() {
   }
 }
