@@ -1,4 +1,4 @@
-import { PermissionLevelEnum } from "./components/constants/permissionLevelEnum";
+import { ActionTypeEnum } from "./components/constants/actionTypeEnum";
 
 export interface Validator {
     name: string;
@@ -19,6 +19,7 @@ export interface FieldConfig {
     hasThousandSeparator?: boolean;
     disable?: boolean;
     hiddenOnCreate?:boolean;
+    rowNumber?:number;
     //  permissionLevel?: PermissionLevelEnum[]; 
 }
     //info: inputType:

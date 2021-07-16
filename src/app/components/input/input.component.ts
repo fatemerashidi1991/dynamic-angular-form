@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { FieldConfig } from "../../field.interface";
-import { ThousandSeparatorPipe } from "../pipes/thousandSeparator";
 
 @Component({
   selector: "app-input",
@@ -11,7 +10,7 @@ import { ThousandSeparatorPipe } from "../pipes/thousandSeparator";
 export class InputComponent implements OnInit {
   field: FieldConfig;
   group: FormGroup;
-  constructor(private thousandSeparator: ThousandSeparatorPipe) {
+  constructor() {
   }
   processMyValue(): void {
     let numberVal = parseInt(this.field.value).toLocaleString();

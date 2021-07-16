@@ -1,4 +1,4 @@
-export enum PermissionLevelEnum {
+export enum ActionTypeEnum {
     create = 1,
     read = 2,
     update = 3,

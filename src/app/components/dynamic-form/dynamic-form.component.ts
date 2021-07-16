@@ -30,7 +30,7 @@ export class DynamicFormComponent implements OnInit {
   get value() {
     return this.form.value;
   }
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.createControl();
@@ -61,7 +61,7 @@ export class DynamicFormComponent implements OnInit {
 
   bindValidations(validations: any) {
     if (validations.length > 0) {
-      const validList :any= [];
+      const validList: any = [];
       validations.forEach(valid => {
         validList.push(valid.validator);
       });

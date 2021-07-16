@@ -14,8 +14,10 @@ import { RadiobuttonComponent } from './components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { ThousandSeparatorPipe } from './components/pipes/thousandSeparator';
 import { TextAreaComponent } from './components/textarea/textarea.component';
+import { EmployeeService } from './crudServices/employee.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +36,10 @@ import { TextAreaComponent } from './components/textarea/textarea.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ThousandSeparatorPipe],
+  providers: [EmployeeService],
   bootstrap: [AppComponent],
   entryComponents: [
     InputComponent,

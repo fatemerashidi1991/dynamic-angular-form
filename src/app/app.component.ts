@@ -2,7 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Validators } from "@angular/forms";
 import { FieldConfig } from "./field.interface";
 import { DynamicFormComponent } from "./components/dynamic-form/dynamic-form.component";
-import { PermissionLevelEnum } from './components/constants/permissionLevelEnum';
+import { ActionTypeEnum } from './components/constants/actionTypeEnum';
+import { EmployeeService } from './crudServices/employee.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,7 @@ import { PermissionLevelEnum } from './components/constants/permissionLevelEnum'
 export class AppComponent {
   title = 'dynamic-form';
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
+  constructor(private empService: EmployeeService) {}
   regConfig: FieldConfig[] = [
     {
       type: "input",
@@ -18,6 +21,7 @@ export class AppComponent {
       inputType: "text",
       name: "name",
       disable: false,
+      rowNumber:1,
       validations: [
         {
           name: "required",
@@ -36,6 +40,7 @@ export class AppComponent {
       label: "Email Address",
       inputType: "email",
       name: "email",
+      rowNumber:1,
       validations: [
         {
           name: "required",
@@ -56,6 +61,7 @@ export class AppComponent {
       label: "Password",
       inputType: "password",
       name: "password",
+      rowNumber:3,
       validations: [
         {
           name: "required",
@@ -69,25 +75,21 @@ export class AppComponent {
       label: "Gender",
       name: "gender",
       options: ["Male", "Female"],
-      value: "Male"
+      value: "Male",
+      rowNumber:4,
     },
     {
       type: "date",
       label: "DOB",
       name: "dob",
-      validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Date of Birth Required"
-        }
-      ]
+      rowNumber:5,
     },
     {
       type: "select",
       label: "Country",
       name: "country",
       value: "UK",
+      rowNumber:6,
       options: ["India", "UAE", "UK", "US"]
     },
     {
@@ -95,12 +97,8 @@ export class AppComponent {
       label: "Phone Number",
       inputType: "tel",
       name: "Phone Number",
+      rowNumber:7,
       validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Phone Number Required"
-        },
         {
           name: "pattern",
           validator: Validators.pattern(
@@ -119,35 +117,30 @@ export class AppComponent {
       ]
     },
     {
-      type: "input",
-      label: "Assets($)",
-      inputType: "text",
-      name: "price",
-      hasThousandSeparator: true
-    },
-    {
       type: "checkbox",
       label: "Accept Terms",
       name: "term",
-      value: true
-    },
-    {
-      type: "input",
-      label: "color",
-      inputType: "color",
-      name: "color",
+      value: true,
+      rowNumber:9,
     },
     {
       type: "textarea",
       label: "description",
       inputType: "textarea",
       name: "textarea",
+      rowNumber:11,
     },
     {
       name: "saveBtn",
       type: "button",
-      label: "Save"
+      label: "Save",
+      rowNumber:12,
     },
   ];
-  submit(value: any) { }
+  submit(value: any): void {
+    this.empService.save(value).subscribe();
+  }
+  read(value: any): void {
+    this.empService.findOne(value.id).subscribe();
+  }
 }
