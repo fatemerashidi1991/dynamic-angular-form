@@ -13,7 +13,7 @@ import { EmployeeService } from './crudServices/employee.service';
 export class AppComponent {
   title = 'dynamic-form';
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
-  constructor(private empService: EmployeeService) {}
+  constructor(private empService: EmployeeService) { }
   regConfig: FieldConfig[] = [
     {
       type: "input",
@@ -21,7 +21,7 @@ export class AppComponent {
       inputType: "text",
       name: "name",
       disable: false,
-      rowNumber:1,
+      rowNumber: 1,
       validations: [
         {
           name: "required",
@@ -40,7 +40,7 @@ export class AppComponent {
       label: "Email Address",
       inputType: "email",
       name: "email",
-      rowNumber:1,
+      rowNumber: 1,
       validations: [
         {
           name: "required",
@@ -61,7 +61,7 @@ export class AppComponent {
       label: "Password",
       inputType: "password",
       name: "password",
-      rowNumber:3,
+      rowNumber: 3,
       validations: [
         {
           name: "required",
@@ -76,20 +76,20 @@ export class AppComponent {
       name: "gender",
       options: ["Male", "Female"],
       value: "Male",
-      rowNumber:4,
+      rowNumber: 4,
     },
     {
       type: "date",
       label: "DOB",
       name: "dob",
-      rowNumber:5,
+      rowNumber: 5,
     },
     {
       type: "select",
       label: "Country",
       name: "country",
       value: "UK",
-      rowNumber:6,
+      rowNumber: 6,
       options: ["India", "UAE", "UK", "US"]
     },
     {
@@ -97,7 +97,7 @@ export class AppComponent {
       label: "Phone Number",
       inputType: "tel",
       name: "Phone Number",
-      rowNumber:7,
+      rowNumber: 7,
       validations: [
         {
           name: "pattern",
@@ -117,24 +117,24 @@ export class AppComponent {
       ]
     },
     {
-      type: "checkbox",
-      label: "Accept Terms",
-      name: "term",
-      value: true,
-      rowNumber:9,
-    },
-    {
       type: "textarea",
       label: "description",
       inputType: "textarea",
       name: "textarea",
-      rowNumber:11,
+      rowNumber: 11,
+    },
+    {
+      type: "checkbox",
+      label: "Accept Terms",
+      name: "term",
+      value: true,
+      rowNumber: 9,
     },
     {
       name: "saveBtn",
       type: "button",
       label: "Save",
-      rowNumber:12,
+      rowNumber: 12,
     },
   ];
   submit(value: any): void {

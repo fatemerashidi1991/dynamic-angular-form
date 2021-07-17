@@ -1,5 +1,5 @@
-<mat-form-field class="demo-full-width" [formGroup]="group">
-    <input matInput [formControlName]="field!.name" [placeholder]="field.label!" [type]="field.inputType!"
+<mat-form-field class="this-feels-better" [formGroup]="group">
+    <input class="toolbar-search" matInput [formControlName]="field!.name" [placeholder]="field.label!" [type]="field.inputType!"
         mask="field.mask!" (focusout)="processMyValue()" [(ngModel)]="field.value" [readonly]="field.disable">
     <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">
         <mat-error *ngIf="group.get(field.name)!.hasError(validation.name)">{{validation.message}}</mat-error>
